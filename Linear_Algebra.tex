@@ -1,0 +1,72 @@
+\documentclass[UTF8]{ctexart}
+    \usepackage{amsmath}
+    \usepackage{hyperref}
+    \usepackage{indentfirst}
+    \usepackage{cite}
+    \usepackage{titling}
+    \usepackage{multicol}
+    \usepackage{geometry}
+    \usepackage[super,square]{natbib}
+    \geometry{left=2cm,right=2cm,top=2.5cm,bottom=2cm}
+    \setlength{\parindent}{2em}
+    \title{高等代数复习笔记}
+    \date{}
+    \begin{document}
+    \maketitle
+    \pagestyle{plain}
+    \hrule
+    \tableofcontents
+    \hrule
+    \section{线性方程组求解}
+    \subsection{矩阵消元}不再赘述。
+    \subsection{$Ax=b$}
+    \subsubsection{解的存在性}
+    当系数矩阵的秩与增广矩阵的秩相等时，有解。即
+    \[\displaystyle R(A,b)=R(A) \]
+    \indent
+    而对于$A\in F^{n\times n},Ax=b$有唯一解，等价于$|A|\neq 0$\\
+    \indent
+    考虑$Ax=0,V=\left\{{x|Ax=0}\right\}$\\
+    \indent
+    有$dim(V)+Rank(A)=n$(秩-零化度定理)\\
+    \indent
+    同时，有$A=(A_1...A_n)^T,V(A_1...A_n)\perp V$\\
+    \indent
+    对于$Ax=b$，解可写成一个特解加上解$Ax=0$得到的通解。
+    \section{向量空间}
+    \subsection{八个运算律(以下均为缩略表示)}
+    \subsubsection{加法交换律}$a+b=b+a$
+    \subsubsection{加法结合律}$(a+b)+c=a+(b+c)$
+    \subsubsection{存在零向量}$0=(0,...,0),a+0=0+a$
+    \subsubsection{存在负向量}$对于a=(a_1,...,a_n)，存在负向量-a=(-a_1,...,-a_n)，满足a+(-a)=0$
+    \subsubsection{数乘对于数的加法的分配律}$(\lambda+\mu)a=\lambda a+\mu a$
+    \subsubsection{数乘对于向量加法的分配律}$\lambda(a+b)=\lambda a+\lambda b$
+    \subsubsection{数乘结合律}$\lambda(\mu a)=(\lambda \mu)a$
+    \subsubsection{1乘向量}$1a=a$
+    \subsection{线性相关与线性无关}
+    对于n个向量$\alpha_1,...,\alpha_2$，考虑
+    \[\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=0\]
+    \indent
+    若上式当且仅当$\lambda_1,...,\lambda_n$全为0时才满足，则称这n个向量线性无关，否则线性相关。
+    \subsection{线性组合}
+    具体含义不再赘述。\\
+    \indent
+    若B是A的线性组合，则$Rank(A)\geq Rank(B)$
+    \subsection{秩}
+    对于一个向量组，它的秩就是极大线性无关向量组中的向量的个数。不再赘述。
+    \subsection{基}
+    基的概念由秩派生而来，不再赘述。
+    \subsubsection{坐标变换}
+    坐标：有序数组$(x_1,...,x_n)$，通常记作列向量。即$\alpha=(a_1,...,a_n)(x_1,...,x_n)^T$\\
+    \indent
+    使用NB代表新基，OP代表旧坐标，NP代表新坐标，则有$[NB][NP]=[OP]$，而通过化简$[NB,OP]$可得到NP。
+    \subsubsection{过渡矩阵}
+    过渡矩阵是基与基之间的可逆线性变换，具体请参照教材，不再赘述。\\
+    \indent
+    由基A变到基B：$B=AP$，由坐标X(A)变到坐标Y(B)：$X=PY$，使用逆运算即可求解处过渡矩阵。
+    \subsection{子空间}
+    子空间W是数域F上的向量空间V的非空子集，且满足加法与数乘封闭。\\
+    \indent
+    子空间W包含的线性无关向量的最大个数称为W的维数，记作dimW。其余可参照教材，不再赘述。
+    \subsubsection{子空间的交与和}
+\end{document}
