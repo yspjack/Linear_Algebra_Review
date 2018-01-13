@@ -9,6 +9,9 @@ tags:
     - 笔记
 ---
 
+<!-- KaTeX Rendering -->
+<script src="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js"></script>
+
 # 矩阵消元
 
 
