@@ -50,6 +50,8 @@ tags:
     - [顺序主子式](#%E9%A1%BA%E5%BA%8F%E4%B8%BB%E5%AD%90%E5%BC%8F)
   - [若尔当标准形](#%E8%8B%A5%E5%B0%94%E5%BD%93%E6%A0%87%E5%87%86%E5%BD%A2)
 
+---
+
 # 矩阵消元
 
 不再赘述。
@@ -280,3 +282,9 @@ n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>
 ## 若尔当标准形
 
 看教材给出的算法吧，极好。
+
+---
+
+Included scripts (not supposed to be seen):
+
+KaTeX <script src="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js"></script>
