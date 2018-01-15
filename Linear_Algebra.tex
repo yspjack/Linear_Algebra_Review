@@ -101,7 +101,7 @@
 \indent
 方阵可逆，当且仅当其行列式不为零。\\
 \indent
-当方阵A可逆，则其存在相应的伴随矩阵$A^{*}$，满足$A^{-1}=|A{-1}|A^{*}$
+当方阵A可逆，则其存在相应的伴随矩阵$A^{*}$，满足$A^{-1}=|A|^{-1}A^{*}$
 \subsubsection{迹}
 迹也是一个映射，将一个方阵映射到一个数。其定义为方阵主对角线上各个元素的总和。
 \subsubsection{特征值}
@@ -186,6 +186,12 @@ $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特�
 同时，如果$p=n$，则$\Lambda$与$S$正定，如果$p=0$，则$\Lambda$与$S$半负定。
 \subsubsection{顺序主子式}
 n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>0$
+\subsubsection{对称矩阵乘积的正定性}
+\begin{itemize}
+    \item [-]若$A$是正定矩阵，$A,B$都是对称矩阵，且$AB=BA$，则AB是正定矩阵的充要条件是B是正定矩阵。
+    \item [-]若$A,B$都是正定对称矩阵，则$AB$是对称矩阵的充要条件是$AB=BA$
+    \item [-]若$A$是一个$n$阶实对称矩阵且$Rank(A)=n$，则存在实对称矩阵，使得$AB+BA$是正定矩阵。
+\end{itemize}
 \subsection{若尔当标准形}
 看教材给出的算法吧，极好。
 \end{document}
