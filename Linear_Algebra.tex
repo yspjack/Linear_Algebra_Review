@@ -57,6 +57,13 @@
 对于一个向量组，它的秩就是极大线性无关向量组中的向量的个数。不再赘述。
 \subsection{基}
 基的概念由秩派生而来，不再赘述。
+\subsubsection{基变换}
+设$a_1,a_2,...,a_n$是$V \in F^{n}$上的一组基，$\sigma$是$V$中的一个线性变换，基向量的像可以被基线性表示出来。
+\begin{eqnarray*}
+    \sigma(a_1,a_2,...,a_n) & = & (\sigma(a_1),\sigma(a_2),...,\sigma(a_n))    \\
+    & = &(a_1,a_2,...,a_n)A
+\end{eqnarray*}
+其中，矩阵$A$称为$\sigma$在基$a_1,a_2,...,a_n$下的矩阵。
 \subsubsection{坐标变换}
 坐标：有序数组$(x_1,...,x_n)$，通常记作列向量。即$\alpha=(a_1,...,a_n)(x_1,...,x_n)^T$\\
 \indent
@@ -186,6 +193,11 @@ $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特�
 同时，如果$p=n$，则$\Lambda$与$S$正定，如果$p=0$，则$\Lambda$与$S$半负定。
 \subsubsection{顺序主子式}
 n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>0$
+\subsubsection{相合对角化与配方}
+两者的原理相似。\\
+\indent
+考虑二次型$f(x_{1},x_{2},x_{3})=2x_{1}^{2}+x_{2}^{2}-4x_{1}x_{2}-4x_{2}x_{3}$
+(噫，没写完)
 \subsubsection{对称矩阵乘积的正定性}
 \begin{itemize}
     \item [-]若$A$是正定矩阵，$A,B$都是对称矩阵，且$AB=BA$，则AB是正定矩阵的充要条件是B是正定矩阵。
