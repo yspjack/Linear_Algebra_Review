@@ -63,6 +63,24 @@ $$\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}$$
 
 对于一个向量组，它的秩就是极大线性无关向量组中的向量的个数。不再赘述。
 
+### 秩公式
+
+$Rank(A^{T}A)=Rank(AA^{T})=Rank(A),A$为实矩阵。
+
+### 秩与伴随矩阵
+
+$$
+\begin{equation*}
+    \left\{
+        \begin{array}{c}
+            Rank(A)=n,Rank(A^{*})=n\\
+            Rank(A)=n-1,Rank(A^{*})=1\\
+            Rank(A)<n-1,Rank(A^{*})=0
+        \end{array}
+    \right.
+\end{equation*}
+$$
+
 ## 基
 
 基的概念由秩派生而来，不再赘述。
@@ -138,6 +156,21 @@ $W_3$和$W_4$仍是V的子空间，但是$W_1\cup W_2=W_5$一定是子空间。
 还有$\bigl | \begin{smallmatrix}C&A\\B&\mathit{O}\end{smallmatrix}\bigr |$=$\bigl | \begin{smallmatrix}\mathit{O}&A\\B&D \end{smallmatrix}\bigr |$=$(-1)^{n}|A||B|$  
 
 还有比较实用的$|A|$=$\bigl | \begin{smallmatrix}A&\mathit{O}\\\mathit{O}&I_{m}\end{smallmatrix}\bigr |$
+
+### \*范德蒙行列式
+
+$$
+\begin{vmatrix} 
+1 & 1 & \dots & 1 \\ 
+m_1 & m_2 & \dots & m_n\\
+\vdots & \vdots & & \vdots \\
+m_1^{n-1} & m_2^{n-1} & \dots & m_n^{n-1}
+\end{vmatrix}
+=
+\prod_{1 \le i \lt j \le n}{(m_i-m_j)}
+$$
+
+原因：(ry
 
 [^1]: 把矩阵块看作矩阵的元素进行行变换
 
