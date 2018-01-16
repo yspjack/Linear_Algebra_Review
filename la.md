@@ -67,6 +67,18 @@ $$\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}$$
 
 基的概念由秩派生而来，不再赘述。
 
+### 基变换
+设$a_1,a_2,...,a_n$是$V \in F^{n}$上的一组基，$\sigma$是$V$中的一个线性变换，基向量的像可以被基线性表示出来。
+
+$$
+\begin{eqnarray*}
+    \sigma(a_1,a_2,...,a_n) & = & (\sigma(a_1),\sigma(a_2),...,\sigma(a_n))    \\
+    & = &(a_1,a_2,...,a_n)A
+\end{eqnarray*}
+$$
+
+其中，矩阵$A$称为$\sigma$在基$a_1,a_2,...,a_n$下的矩阵。
+
 ### 坐标变换
 
 坐标：有序数组$X=(x_1,...,x_n)^T$，通常记作列向量。
@@ -272,13 +284,21 @@ $$
 \Lambda_{1}=P_{1}^{T}SP_{1}=\text{diag}(I_{(p_1)},-I_{(q_1)},\mathit{O})
 $$
 
-则$\Lambda=\Lambda_{1}​$，即$p=p_1​$,$q=q_1​$  
+则$\Lambda=\Lambda_{1}$，即$p=p_1$,$q=q_1$  
 
 同时，如果$p=n$，则$\Lambda$与S正定，如果$p=0$，则$\Lambda$与$S$半负定。(ry
 
 ### 顺序主子式
 
 n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>0$
+
+### 相合对角化与配方
+
+两者的原理相似
+
+考虑二次型$f(x_{1},x_{2},x_{3})=2x_{1}^{2}+x_{2}^{2}-4x_{1}x_{2}-4x_{2}x_{3}$
+
+*待补完（敲里吗）*
 
 ### 对称矩阵乘积的正定性
 
@@ -295,3 +315,9 @@ n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>
 Included scripts (not supposed to be seen):
 
 KaTeX <script src="https://cdn.bootcss.com/KaTeX/0.9.0-alpha2/contrib/auto-render.min.js"></script>
+
+<style>
+h1 {
+  page-break-before: always;
+}
+</style>
