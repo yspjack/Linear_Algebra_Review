@@ -9,48 +9,9 @@ tags:
     - 笔记
 ---
 
-# 目录
-- [矩阵消元](#%E7%9F%A9%E9%98%B5%E6%B6%88%E5%85%83)
-  - [$Ax=b$](#axb)
-    - [解的存在性](#%E8%A7%A3%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7)
-- [向量空间](#%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4)
-  - [八个运算律(以下均为缩略表示)](#%E5%85%AB%E4%B8%AA%E8%BF%90%E7%AE%97%E5%BE%8B%E4%BB%A5%E4%B8%8B%E5%9D%87%E4%B8%BA%E7%BC%A9%E7%95%A5%E8%A1%A8%E7%A4%BA)
-  - [线性相关与线性无关](#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E4%B8%8E%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3)
-  - [线性组合](#%E7%BA%BF%E6%80%A7%E7%BB%84%E5%90%88)
-  - [秩](#%E7%A7%A9)
-  - [基](#%E5%9F%BA)
-    - [坐标变换](#%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2)
-    - [过渡矩阵](#%E8%BF%87%E6%B8%A1%E7%9F%A9%E9%98%B5)
-    - [子空间](#%E5%AD%90%E7%A9%BA%E9%97%B4)
-    - [子空间的交与和](#%E5%AD%90%E7%A9%BA%E9%97%B4%E7%9A%84%E4%BA%A4%E4%B8%8E%E5%92%8C)
-  - [行列式](#%E8%A1%8C%E5%88%97%E5%BC%8F)
-    - [性质](#%E6%80%A7%E8%B4%A8)
-    - [展开定理](#%E5%B1%95%E5%BC%80%E5%AE%9A%E7%90%86)
-    - [分块运算](#%E5%88%86%E5%9D%97%E8%BF%90%E7%AE%97)
-  - [矩阵](#%E7%9F%A9%E9%98%B5)
-    - [矩阵乘法](#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95)
-    - [逆](#%E9%80%86)
-    - [迹](#%E8%BF%B9)
-    - [特征值](#%E7%89%B9%E5%BE%81%E5%80%BC)
-    - [特征向量](#%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F)
-  - [初等变换](#%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2)
-  - [线性映射](#%E7%BA%BF%E6%80%A7%E6%98%A0%E5%B0%84)
-  - [相似](#%E7%9B%B8%E4%BC%BC)
-    - [性质](#%E6%80%A7%E8%B4%A8)
-    - [相似对角化条件](#%E7%9B%B8%E4%BC%BC%E5%AF%B9%E8%A7%92%E5%8C%96%E6%9D%A1%E4%BB%B6)
-    - [三角化（实用）](#%E4%B8%89%E8%A7%92%E5%8C%96%EF%BC%88%E5%AE%9E%E7%94%A8%EF%BC%89)
-    - [化零多项式](#%E5%8C%96%E9%9B%B6%E5%A4%9A%E9%A1%B9%E5%BC%8F)
-  - [内积](#%E5%86%85%E7%A7%AF)
-    - [性质](#%E6%80%A7%E8%B4%A8)
-    - [柯西不等式](#%E6%9F%AF%E8%A5%BF%E4%B8%8D%E7%AD%89%E5%BC%8F)
-    - [施密特正交化方法](#%E6%96%BD%E5%AF%86%E7%89%B9%E6%AD%A3%E4%BA%A4%E5%8C%96%E6%96%B9%E6%B3%95)
-    - [正交方阵](#%E6%AD%A3%E4%BA%A4%E6%96%B9%E9%98%B5)
-  - [二次型、实对称方阵、相合、正交相似](#%E4%BA%8C%E6%AC%A1%E5%9E%8B%E3%80%81%E5%AE%9E%E5%AF%B9%E7%A7%B0%E6%96%B9%E9%98%B5%E3%80%81%E7%9B%B8%E5%90%88%E3%80%81%E6%AD%A3%E4%BA%A4%E7%9B%B8%E4%BC%BC)
-    - [西尔维斯特惯性定律](#%E8%A5%BF%E5%B0%94%E7%BB%B4%E6%96%AF%E7%89%B9%E6%83%AF%E6%80%A7%E5%AE%9A%E5%BE%8B)
-    - [顺序主子式](#%E9%A1%BA%E5%BA%8F%E4%B8%BB%E5%AD%90%E5%BC%8F)
-  - [若尔当标准形](#%E8%8B%A5%E5%B0%94%E5%BD%93%E6%A0%87%E5%87%86%E5%BD%A2)
+[TOC]
 
----
+
 
 # 矩阵消元
 
@@ -61,11 +22,17 @@ tags:
 ### 解的存在性
 
 当系数矩阵的秩与增广矩阵的秩相等时，有解。即
-$\displaystyle R(A,b)=R(A)$
-而对于$A\in F^{n\times n},Ax=b$有唯一解，等价于$|A|\neq 0$  
+
+$$\displaystyle R(A,b)=R(A)$$
+
+而对于$A\in F^{n\times n},Ax=b$有唯一解，等价于$|A|\neq 0$ 
+
 考虑$Ax=\mathit{O},V=\left\{{x|Ax=\mathit{O}}\right\}$  
+
 有$dim(V)+Rank(A)=n$(秩-零化度定理)  
+
 同时，有$A=(A_1...A_n)^T,V(A_1...A_n)\perp V$  
+
 对于$Ax=b$，解可写成一个特解加上解$Ax=\mathit{O}$得到的通解。
 
 # 向量空间
@@ -84,7 +51,7 @@ $\displaystyle R(A,b)=R(A)$
 ## 线性相关与线性无关
 
 对于n个向量$\alpha_1,...,\alpha_2$，考虑
-$\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}$
+$$\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}$$
 若上式当且仅当$\lambda_1,...,\lambda_n$全为0时才满足，则称这n个向量线性无关，否则线性相关。
 
 ## 线性组合
@@ -102,7 +69,10 @@ $\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}$
 
 ### 坐标变换
 
-坐标：有序数组$(x_1,...,x_n)$，通常记作列向量。即$\alpha=(a_1,...,a_n)(x_1,...,x_n)^T$  
+坐标：有序数组$X=(x_1,...,x_n)^T$，通常记作列向量。
+
+即$\alpha=AX$，其中$A=(a_1, a_2, ..., a_n)$  
+
 使用NB代表新基，OP代表旧坐标，NP代表新坐标，则有$[NB][NP]=[OP]$，而通过化简$[NB,OP]$可得到NP。
 
 ### 过渡矩阵
@@ -113,11 +83,23 @@ $\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}$
 ### 子空间
 
 子空间W是数域F上的向量空间V的非空子集，且满足加法与数乘封闭。  
-子空间W包含的线性无关向量的最大个数称为W的维数，记作dimW。其余可参照教材，不再赘述。
+子空间W包含的线性无关向量的最大个数称为W的维数，记作$\dim W$。其余可参照教材，不再赘述。
 
 ### 子空间的交与和
 
-对于$W_1,W_2\subseteq V$,$W_1\cap W_2=W_3,W_1+W_2=W_4$。$W_3$和$W_4$仍是V的子空间，但是$W_1\cup W_2=W_5,W_5$不一定是子空间。  
+对于$W_1,W_2\subseteq V$,
+$$
+W_1\cap W_2=W_3
+$$
+
+$$
+W_1+W_2= \{w_1+w_2 \ | \ w_1 \in W_1, w_2 \in W_2 \}=W_4
+$$
+
+$W_3$和$W_4$仍是V的子空间，但是$W_1\cup W_2=W_5$一定是子空间。  
+
+
+
 其中，$dim(W_1+W_2)+dim(W_1\cap W_2)=dim(W_1)+dim(W_2)$，当$dim(W_1\cap W_2)=0$时，$W_1+W_2$记为$W_1\oplus W_2$，称为直和。  
 
 ## 行列式
@@ -135,11 +117,17 @@ $\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}$
 
 ### 分块运算
 
-若$A,B$均为方阵，则$\bigl| \begin{matrix} A & C \\ \mathit{O} & B \end{matrix} \bigr|=|A||B|$
-若A可逆，则还有$\bigl | \begin{matrix}A&C \\ D&B\end{matrix}\bigr |$
-=$\bigl | \begin{matrix}A&C\\\mathit{O}&B-DA^{-1}C \end{matrix}\bigr|$=$|A||B-DA^{-1}C|$  
-还有$\bigl | \begin{matrix}C&A\\B&\mathit{O}\end{matrix}\bigr |$=$\bigl | \begin{matrix}\mathit{O}&A\\B&D \end{matrix}\bigr |$=$(-1)^{n}|A||B|$  
-还有比较实用的$|A|$=$\bigl | \begin{matrix}A&\mathit{O}\\\mathit{O}&I_{m}\end{matrix}\bigr |$
+若$A,B$均为方阵，则$\bigl| \begin{smallmatrix} A & C \\ \mathit{O} & B \end{smallmatrix} \bigr|=|A||B|$
+
+若A可逆，则还有$\bigl | \begin{smallmatrix}A&C \\ D&B\end{smallmatrix}\bigr | =\bigl | \begin{smallmatrix}A&C\\\mathit{O}&B-DA^{-1}C \end{smallmatrix}\bigr|$=$|A||B-DA^{-1}C|$   
+
+（因为有$ \bigl [ \begin{smallmatrix} A & C\\ D & B\end{smallmatrix} \bigr ] \xrightarrow{-(DA^{-1})(1)+(2)} \bigl [ \begin{smallmatrix} A & C \\ O & B-DA^{-1}C \end{smallmatrix}\bigr ]$[^1])
+
+还有$\bigl | \begin{smallmatrix}C&A\\B&\mathit{O}\end{smallmatrix}\bigr |$=$\bigl | \begin{smallmatrix}\mathit{O}&A\\B&D \end{smallmatrix}\bigr |$=$(-1)^{n}|A||B|$  
+
+还有比较实用的$|A|$=$\bigl | \begin{smallmatrix}A&\mathit{O}\\\mathit{O}&I_{m}\end{smallmatrix}\bigr |$
+
+[^1]: 把矩阵块看作矩阵的元素进行行变换
 
 ## 矩阵
 
@@ -163,6 +151,7 @@ $\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}$
 ### 特征值
 
 3B1B，请。  
+
 $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特征值。
 
 ### 特征向量
@@ -176,8 +165,10 @@ $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特�
 
 ## 线性映射
 
-若一个映射满足$f(\alpha x+\beta y)=\alpha f(x)+\beta f(y)$，则称该映射为线性映射。线性映射$\sigma:X\rightarrow AX$可以通过用矩阵A左乘自变量X实现。若$\sigma$是$F^{n\times 1}$到自身的映射，则称为线性变换(线性自同态映射)。  
+若一个映射满足$f(\alpha x+\beta y)=\alpha f(x)+\beta f(y)$，则称该映射为线性映射。线性映射$\sigma:X\rightarrow AX$可以通过用矩阵$A$左乘自变量$X$实现。若$\sigma$是$F^{n\times 1}$到自身的映射，则称为线性变换(线性自同态映射)。  
+
 对于线性映射$\sigma U\rightarrow V$，对于两个基，有$X\rightarrow AX$，$Y\rightarrow BY$，则A与B相抵。  
+
 若该映射为线性变换，则A与B相似。即同个线性变换在不同基下的矩阵相似。
 
 ## 相似
@@ -194,13 +185,13 @@ $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特�
 
 -   $(PAP^{-1})^{n}=PA^{n}P^{-1}$（暗示要将矩阵相似到对角阵再进行幂运算）
 
--   对于任意多项式f(x)，有$f(PAP^{-1})=Pf(A)P^{-1}$（实质是上一条的一般情况）
+-   对于**任意多项式$f(x)$**，有$f(PAP^{-1})=Pf(A)P^{-1}$（实质是上一条的一般情况）
 
 -   属于同一个方阵的不同特征值对应的特征向量线性无关。
 
 ### 相似对角化条件
 
-*（具体可参照维基百科"可对角化矩阵词条"）*
+*（具体可参照[维基百科"可对角化矩阵词条"][diag]）*
 
 先阐述两个概念：代数重数即$\lambda$作为方阵$A$的特征多项式的根的次数，几何重数即特征值相对应的特征空间（即$\lambda I -A$的核）的维数。
 
@@ -217,6 +208,8 @@ $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特�
 -   方阵是实对称方阵。该条件仅为充分条件。
 
 -   有$n$个特征值。该条件仅为充分条件。
+
+[diag]: https://zh.wikipedia.org/wiki/%E5%8F%AF%E5%AF%B9%E8%A7%92%E5%8C%96%E7%9F%A9%E9%98%B5
 
 ### 三角化（实用）
 
@@ -251,12 +244,15 @@ $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特�
 过程如下（如果是用于编写线性代数计算器就用豪斯霍尔德变换吧）：
 首先要拥有一组线性无关的向量${a_1,...,a_n}$。 
 
-
-$\beta_{1}=a_1$, $\eta_{1} = \frac{\beta_{1}}{|\beta_{1}|}$  
-$\beta_{2}=a_2-(a_2,\eta_1)\eta_1$, $\eta_2=\frac{\beta_{2}}{|\beta_{2}|}$  
-$\beta_{3}=a_3-(a_3,\eta_1)\eta_1-(a_3,\eta_2)\eta_2$, $\eta_3=\frac{\beta_{3}}{|\beta_{3}|}$  
-$...$  
-$\displaystyle \beta_{n}=a_n-\sum^{n-1}_{i=1}(a_n,\eta_i)\eta_i$  
+$$
+\begin{aligned}
+&\beta_{1}=a_1&\eta_{1} = \frac{\beta_{1}}{|\beta_{1}|} \\
+&\beta_{2}=a_2-(a_2,\eta_1)\eta_1& \eta_2=\frac{\beta_{2}}{|\beta_{2}|}\\
+&\beta_{3}=a_3-(a_3,\eta_1)\eta_1-(a_3,\eta_2)\eta_2&\eta_3=\frac{\beta_{3}}{|\beta_{3}|}\\
+&...\\
+&\displaystyle \beta_{n}=a_n-\sum^{n-1}_{i=1}(a_n,\eta_i)\eta_i\\
+\end{aligned}
+$$
 
 很有规律哒。
 
@@ -271,13 +267,24 @@ $\displaystyle \beta_{n}=a_n-\sum^{n-1}_{i=1}(a_n,\eta_i)\eta_i$
 ### 西尔维斯特惯性定律
 
 设n阶实对称方阵$S$通过两个不同的可逆方阵$P,P_{1}$相合到标准形
-$\Lambda=P^{T}SP=dial(I_{(p)},-I_{(q)},\mathit{O})$，$\Lambda_{1}=P_{1}^{T}SP_{1}=dial(I_{(p_1)},-I_{(q_1)},\mathit{O})$
-则$\Lambda=\Lambda_{1}$，即$p=p_1$,$q=q_1$  
-同时，如果$p=n$，则$\Lambda$与S正定，如果$p=0$，则$\Lambda$与$S$半负定。
+$$
+\Lambda=P^{T}SP=\text{diag} (I_{(p)},-I_{(q)},\mathit{O})，\\
+\Lambda_{1}=P_{1}^{T}SP_{1}=\text{diag}(I_{(p_1)},-I_{(q_1)},\mathit{O})
+$$
+
+则$\Lambda=\Lambda_{1}​$，即$p=p_1​$,$q=q_1​$  
+
+同时，如果$p=n$，则$\Lambda$与S正定，如果$p=0$，则$\Lambda$与$S$半负定。(ry
 
 ### 顺序主子式
 
 n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>0$
+
+### 对称矩阵乘积的正定性
+
+- 若$A$是正定矩阵，$A,B$都是对称矩阵，且$AB=BA$，则AB是正定矩阵的充要条件是B是正定矩阵。
+- 若$A,B$都是正定对称矩阵，则$AB$是对称矩阵的充要条件是$AB=BA$
+- 若$A$是一个$n$阶实对称矩阵且$\text{rank}(A)=n$，则存在实对称矩阵，使得$AB+BA$是正定矩阵。
 
 ## 若尔当标准形
 
