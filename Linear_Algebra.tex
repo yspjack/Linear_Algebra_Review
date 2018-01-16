@@ -22,8 +22,11 @@
 \subsubsection{解的存在性}
 当系数矩阵的秩与增广矩阵的秩相等时，有解。即
 \[\displaystyle R(A,b)=R(A) \]
+在判断方程组是否有解时，常常构造“零等于非零”来证明无解。
 \indent
 而对于$A\in F^{n\times n},Ax=b$有唯一解，等价于$|A|\neq 0$\\
+\indent
+若$Ax=b$的解不唯一，则其解集可写成通解+特解的形式。通解由解$Ax=\mathit{0}$得到，特解是解$Ax=b$得到的其中一个解。\\
 \indent
 考虑$Ax=\mathit{O},V=\left\{{x|Ax=\mathit{O}}\right\}$\\
 \indent
@@ -83,7 +86,9 @@ $Rank(A^{T}A)=Rank(AA^{T})=Rank(A),A$为实矩阵。
 \subsubsection{过渡矩阵}
 过渡矩阵是基与基之间的可逆线性变换，具体请参照教材，不再赘述。\\
 \indent
-由基A变到基B：$B=AP$，由坐标X(A)变到坐标Y(B)：$X=PY$，使用逆运算即可求解处过渡矩阵。
+由基A变到基B：$B=AP$，由坐标X(A)变到坐标Y(B)：$X=PY$，使用逆运算即可求解处过渡矩阵。\\
+\indent
+标准正交基之间的过度矩阵是正交矩阵。
 \subsubsection{子空间}
 子空间W是数域F上的向量空间V的非空子集，且满足加法与数乘封闭。\\
 \indent
@@ -113,6 +118,14 @@ $Rank(A^{T}A)=Rank(AA^{T})=Rank(A),A$为实矩阵。
 矩阵即一个数表，$A\in F^{m\times n},dim(F^{m\times n})=mn$\\
 \indent
 矩阵可进行加法运算，数乘运算，矩阵间乘法，转置，逆，等运算。
+\subsubsection{转置}
+对于任意矩阵$A$，其转置表示为$A^{T}$。\\
+\indent
+$A$与$A^{T}$的行列式、特征值相同。\\
+\indent
+$AA^{T}$是对称方阵，可以依据此构造对称方阵。\\
+\indent
+任意方阵都可以唯一地写成一个对称方阵与一个反对称方阵之和。
 \subsubsection{矩阵乘法}
 对于$A\in F^{m\times n},B\in F^{n\times p},AB=C,C\in F^{m\times p}$，C中每一个元素$c_ij$，由A中的i行与B中的j列构成，即$A_iB_j$。
 \subsubsection{逆}
@@ -124,7 +137,9 @@ $Rank(A^{T}A)=Rank(AA^{T})=Rank(A),A$为实矩阵。
 \subsubsection{迹}
 迹也是一个映射，将一个方阵映射到一个数。其定义为方阵主对角线上各个元素的总和。
 \subsubsection{特征值}
-3B1B，请。\\
+时常要记得特征值的放缩意义，很重要。特征向量不能为零。\\
+\indent
+同时，若是要形象描述，3B1B，请。\\
 \indent
 $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特征值。
 \subsubsection{特征向量}
@@ -144,12 +159,15 @@ $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特�
 \subsubsection{性质}
 \begin{itemize}
 	\item [-]反身性与传递性等基本性质，不再赘述。
-	\item [-]若A与B相似，则A与B的特征多项式、特征值、每个特征值的重数、最小多项式、行列式以及迹都相同，但特征向量不一定相同。该性质均为充分条件，不是充要条件。
+	\item [-]若A与B相似，则A与B的特征多项式、特征值、每个特征值的重数、最小多项式、行列式以及迹都相同，但特征向量不一定相同。该性质均为充分条件，不是充要条件。该条在待定系数法求待定系数时十分常用。
 	\item [-]$(PAP^{-1})(PBP^{-1})=P(AB)P^{-1}$
 	\item [-]$(PAP^{-1})^{n}=PA^{n}P^{-1}$（暗示要将矩阵相似到对角阵再进行幂运算）
 	\item [-]对于任意多项式$f(x)$，有$f(PAP^{-1})=Pf(A)P^{-1}$（实质是上一条的一般情况）
 	\item [-]属于同一个方阵的不同特征值对应的特征向量线性无关。
 \end{itemize}
+另外，单位阵与可逆阵、对角阵、数量阵都未必相似。\\
+\indent
+若$A,B$均为方阵，A满秩，则$AB$与$BA$相似。
 \subsubsection{相似对角化条件（具体可参照维基百科“可对角化矩阵词条”）}
 先阐述两个概念：代数重数即$\lambda$作为方阵$A$的特征多项式的根的次数，几何重数即特征值相对应的特征空间（即$\lambda I -A$的核）的维数。
 \begin{itemize}
@@ -186,17 +204,19 @@ $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特�
 过程如下（如果是用于编写线性代数计算器就用豪斯霍尔德变换吧）：
 首先要拥有一组线性无关的向量$\left\{a_1,...,a_n\right\}$。
 \begin{eqnarray*}
-    \beta_{1}=a_1 \eta_{1} & = & \frac{\beta_{1}}{|\beta_{1}|} \\
-    \beta_{2}=a_2-(a_2,\eta_1)\eta_1 \eta_2&=&\frac{\beta_{2}}{|\beta_{2}|}\\
-    \beta_{3}=a_3-(a_3,\eta_1)\eta_1-(a_3,\eta_2)\eta_2 \eta_3 &=& \frac{\beta_{3}}{|\beta_{3}|}\\
+    \beta_{1}&=&a_1, \eta_{1}  = \frac{\beta_{1}}{|\beta_{1}|} \\
+    \beta_{2}&=&a_2-(a_2,\eta_1)\eta_1, \eta_2=\frac{\beta_{2}}{|\beta_{2}|}\\
+    \beta_{3}&=&a_3-(a_3,\eta_1)\eta_1-(a_3,\eta_2)\eta_2, \eta_3 = \frac{\beta_{3}}{|\beta_{3}|}\\
     ...\\
-    \displaystyle \beta_{n}=a_n-\sum^{n-1}_{i=1}(a_n,\eta_i)\eta_i \eta_n&=& \frac{\beta_{n}}{\beta_{n}}
+    \displaystyle \beta_{n}&=&a_n-\sum^{n-1}_{i=1}(a_n,\eta_i)\eta_i \eta_n= \frac{\beta_{n}}{\beta_{n}}
 \end{eqnarray*}
 很有规律哒。
 \subsubsection{正交方阵}
 满足$A^{T}=A^{-1}$的方阵$A$称为正交方阵。n阶正交方阵的列向量组与行向量组都是$R^{n}$的标准正交基。
 \subsection{二次型、实对称方阵、相合、正交相似}
-这里的主要内容课上已经讲的很详细了，不打算再赘述。请参照教材，并使用例题与相应习题辅助理解。
+这里的主要内容课上已经讲的很详细了，不打算再赘述。请参照教材，并使用例题与相应习题辅助理解。\\
+\indent
+另外，正定阵必然满秩，与其相似的方阵必然可逆。
 \subsubsection{西尔维斯特惯性定律}
 设n阶实对称方阵$S$通过两个不同的可逆方阵$P,P_{1}$相合到标准形
 \[\Lambda=P^{T}SP=dial(I_{(p)},-I_{(q)},\mathit{O}),\Lambda_{1}=P_{1}^{T}SP_{1}=dial(I_{(p_1)},-I_{(q_1)},\mathit{O}) \]
@@ -208,8 +228,7 @@ n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>
 \subsubsection{相合对角化与配方}
 两者的原理相似。\\
 \indent
-考虑二次型$f(x_{1},x_{2},x_{3})=2x_{1}^{2}+x_{2}^{2}-4x_{1}x_{2}-4x_{2}x_{3}$
-(噫，没写完)
+例题可见2013年高代习题指导二次型部分计算题第二题。
 \subsubsection{对称矩阵乘积的正定性}
 \begin{itemize}
     \item [-]若$A$是正定矩阵，$A,B$都是对称矩阵，且$AB=BA$，则AB是正定矩阵的充要条件是B是正定矩阵。
