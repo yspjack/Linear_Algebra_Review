@@ -17,6 +17,22 @@
 \hrule
 \tableofcontents
 \hrule
+\section{几何部分}
+\subsection{曲面及其方程}
+
+\subsubsection{旋转曲面}
+\subsubsection{柱面}
+
+\subsection{二次曲面}
+\begin{itemize}
+    \item [-]椭圆锥面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=z^{2}$
+    \item [-]椭球面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}+\frac{z^{2}}{c^{2}}=1$
+    \item [-]单页双页面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=1$
+    \item [-]双叶双曲面：$\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=1$
+    \item [-]椭圆双曲面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=z$
+    \item [-]双曲抛物面：$\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=z$
+\end{itemize}
+\section{线性代数部分}
 \subsection{矩阵消元}不再赘述。
 \subsection{$Ax=b$}
 \subsubsection{解的存在性}
@@ -143,7 +159,7 @@ $AA^{T}$是对称方阵，可以依据此构造对称方阵。\\
 \indent
 $|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特征值。
 \subsubsection{特征向量}
-对于方阵A的每一个特征值$\lambda_i$，方程组$(A-\lambda I)X=\mathit{O}$的解空间$V_{\lambda_{i}}$称为$A$的属于特征值 $\lambda_{i}$ 的特征子空间，该空间中的全体非零向量即为属于特征值$\lambda_{i}$的全体特征向量。
+对于方阵A的每一个特征值$\lambda_i$，方程组$(A-\lambda I)X=\mathit{O}$的解空间$V_{\lambda_{i}}$称为$A$的属于特征值 $\lambda_{i}$ 的特征子空间，该空间中的全体非零向量即为属于特征值$\lambda_{i}$的全体特征向量。不同特征值的特征子空间相互正交。
 \subsection{初等变换}
 左乘初等方阵即对矩阵进行初等行变换，右乘初等方阵即对矩阵进行初等列变化。具体看教材。\\
 \indent
@@ -236,5 +252,11 @@ n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>
     \item [-]若$A$是一个$n$阶实对称矩阵且$Rank(A)=n$，则存在实对称矩阵，使得$AB+BA$是正定矩阵。
 \end{itemize}
 \subsection{若尔当标准形}
-看教材给出的算法吧，极好。
+看教材给出的算法吧，极好。\\
+\indent
+个人理解如下：\\
+\indent
+对于某一个特征值$\lambda$，对应的$A-\lambda I$的核的维度即其相应的若当块的个数。然后继续计算$(A-\lambda I)^{n}$的核的维度，直到其不再增加。然后相应地画出维数图，根据维数图每行的元素的个数，得到其对应的块的大小，即可得到若尔当标准型。\\
+\indent
+对于求相应的变换矩阵。$(A-\lambda I)^{n}\mathit{X}=\mathit{0}$的解是第$n$列的元素对应的解，由此可求出每一行最后一个元素对应的向量，然后，对于每一行，前一个$\mathit{X_{i}}$等于$(A-\lambda I)\mathit{X_{i+d}}$。当然，每一个都得保证是非零向量。
 \end{document}
