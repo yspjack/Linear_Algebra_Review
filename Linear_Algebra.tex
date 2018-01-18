@@ -1,264 +1,265 @@
 \documentclass[UTF8]{ctexart}
-    \usepackage{amsmath}
-    \usepackage{hyperref}
-    \usepackage{indentfirst}
-    \usepackage{cite}
-    \usepackage{titling}
-    \usepackage{multicol}
-    \usepackage{geometry}
-    \usepackage[super,square]{natbib}
-    \geometry{left=2cm,right=2cm,top=2.5cm,bottom=2cm}
-    \setlength{\parindent}{2em}
-    \title{高等代数复习笔记}
-    \date{}
+\usepackage{amsmath}
+\usepackage{hyperref}
+%\usepackage{indentfirst}
+%\usepackage{cite}
+%\usepackage{titling}
+\usepackage{multicol}
+\usepackage{geometry}
+%\usepackage[super,square]{natbib}
+\geometry{left=2cm,right=2cm,top=2.5cm,bottom=2cm}
+\setlength{\parindent}{2em}
+\title{高等代数复习笔记}
+\date{}
 \begin{document}
-\maketitle
-\pagestyle{plain}
-\hrule
-\tableofcontents
-\hrule
-\section{几何部分}
-\subsection{曲面及其方程}
-
-\subsubsection{旋转曲面}
-\subsubsection{柱面}
-
-\subsection{二次曲面}
-\begin{itemize}
-    \item [-]椭圆锥面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=z^{2}$
-    \item [-]椭球面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}+\frac{z^{2}}{c^{2}}=1$
-    \item [-]单页双页面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=1$
-    \item [-]双叶双曲面：$\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=1$
-    \item [-]椭圆双曲面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=z$
-    \item [-]双曲抛物面：$\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=z$
-\end{itemize}
-\section{线性代数部分}
-\subsection{矩阵消元}不再赘述。
-\subsection{$Ax=b$}
-\subsubsection{解的存在性}
-当系数矩阵的秩与增广矩阵的秩相等时，有解。即
-\[\displaystyle R(A,b)=R(A) \]
-在判断方程组是否有解时，常常构造“零等于非零”来证明无解。
-\indent
-而对于$A\in F^{n\times n},Ax=b$有唯一解，等价于$|A|\neq 0$\\
-\indent
-若$Ax=b$的解不唯一，则其解集可写成通解+特解的形式。通解由解$Ax=\mathit{0}$得到，特解是解$Ax=b$得到的其中一个解。\\
-\indent
-考虑$Ax=\mathit{O},V=\left\{{x|Ax=\mathit{O}}\right\}$\\
-\indent
-有$dim(V)+Rank(A)=n$(秩-零化度定理)\\
-\indent
-同时，有$A=(A_1...A_n)^T,V(A_1...A_n)\perp V$\\
-\indent
-对于$Ax=b$，解可写成一个特解加上解$Ax=\mathit{O}$得到的通解。
-\subsection{向量空间}
-\subsection{八个运算律(以下均为缩略表示)}
-\begin{itemize}
-	\item [·]加法交换律$a+b=b+a$
-	\item [·]加法结合律$(a+b)+c=a+(b+c)$
-	\item [·]存在零向量$\mathit{O}=(0,...,0),a+\mathit{O}=\mathit{O}+a$
-	\item [·]存在负向量对于$a=(a_1,...,a_n)$，存在负向量$-a=(-a_1,...,-a_n)$，满足$a+(-a)=\mathit{O}$
-	\item [·]数乘对于数的加法的分配律$(\lambda+\mu)a=\lambda a+\mu a$
-	\item [·]数乘对于向量加法的分配律$\lambda(a+b)=\lambda a+\lambda b$
-	\item [·]数乘结合律$\lambda(\mu a)=(\lambda \mu)a$
-	\item [·]1乘向量$1a=a$
-\end{itemize}
-\subsection{线性相关与线性无关}
-对于n个向量$\alpha_1,...,\alpha_2$，考虑
-\[\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}\]
-\indent
-若上式当且仅当$\lambda_1,...,\lambda_n$全为0时才满足，则称这n个向量线性无关，否则线性相关。
-\subsection{线性组合}
-具体含义不再赘述。\\
-\indent
-若B是A的线性组合，则$Rank(A)\geq Rank(B)$
-\subsection{秩}
-对于一个向量组，它的秩就是极大线性无关向量组中的向量的个数。不再赘述。
-\subsubsection{秩公式}
-$Rank(A^{T}A)=Rank(AA^{T})=Rank(A),A$为实矩阵。
-\subsubsection{秩与伴随矩阵}
-\begin{equation*}
-    \left\{
-        \begin{array}{c}
-            Rank(A)=n,Rank(A^{*})=n\\
-            Rank(A)=n-1,Rank(A^{*})=1\\
-            Rank(A)<n-1,Rank(A^{*})=0
-        \end{array}
-    \right.
-\end{equation*}
-\subsection{基}
-基的概念由秩派生而来，不再赘述。
-\subsubsection{基变换}
-设$a_1,a_2,...,a_n$是$V \in F^{n}$上的一组基，$\sigma$是$V$中的一个线性变换，基向量的像可以被基线性表示出来。
-\begin{eqnarray*}
-    \sigma(a_1,a_2,...,a_n) & = & (\sigma(a_1),\sigma(a_2),...,\sigma(a_n))    \\
-    & = &(a_1,a_2,...,a_n)A
-\end{eqnarray*}
-其中，矩阵$A$称为$\sigma$在基$a_1,a_2,...,a_n$下的矩阵。\\
-\indent
-对于同一个线性变换$\sigma$，其在基$\alpha$下的矩阵为$\mathit{A}$，在基$\beta$下的矩阵为$\mathit{B}$，从$\mathit{A}$到$\mathit{B}$有过渡矩阵$\mathit{P}$，则$\mathit{B}=\mathit{P^{-1}AP}$。
-\subsubsection{坐标变换}
-坐标：有序数组$(x_1,...,x_n)$，通常记作列向量。即$\alpha=(a_1,...,a_n)(x_1,...,x_n)^T$\\
-\indent
-使用NB代表新基，OP代表旧坐标，NP代表新坐标，则有$[NB][NP]=[OP]$，而通过化简$[NB,OP]$可得到NP。
-\subsubsection{过渡矩阵}
-过渡矩阵是基与基之间的可逆线性变换，具体请参照教材，不再赘述。\\
-\indent
-由基A变到基B：$B=AP$，由坐标X(A)变到坐标Y(B)：$X=PY$，使用逆运算即可求解处过渡矩阵。\\
-\indent
-标准正交基之间的过度矩阵是正交矩阵。
-\subsubsection{子空间}
-子空间W是数域F上的向量空间V的非空子集，且满足加法与数乘封闭。\\
-\indent
-子空间W包含的线性无关向量的最大个数称为W的维数，记作dimW。其余可参照教材，不再赘述。
-\subsubsection{子空间的交与和}
-对于$W_1,W_2\subseteq V$,$W_1\cap W_2=W_3,W_1+W_2=W_4,W_3$和$W_4$仍是V的子空间，但是$W_1\cup W_2=W_5,W_5$不一定是子空间。\\
-\indent
-其中，$dim(W_1+W_2)+dim(W_1\cap W_2)=dim(W_1)+dim(W_2)$，当$dim(W_1\cap W_2)=0$时，$W_1+W_2$记为$W_1\oplus W_2$，称为直和。\\
-\subsection{行列式}
-行列式也是一种映射，它将一个方阵映射到一个数。\\
-\indent
-\subsubsection{性质}
-太多了，不再赘述。
-\subsubsection{展开定理}
-用于行列式降阶，极其实用。同时也是行列式的归纳定义。\\
-\indent
-代数余子式乘以该项（可以是一个数，也可以是方阵），求和，得到行列式。具体可看教材或拉普拉斯展开维基页面。
-\subsubsection{分块运算}
-若$A,B$均为方阵，则$\bigl| \begin{smallmatrix} A & C \\ \mathit{O} & B \end{smallmatrix} \bigr|=|A||B|$\\
-\indent
-若A可逆，则还有$\bigl | \begin{smallmatrix}A&C \\ D&B\end{smallmatrix}\bigr |$ =$\bigl | \begin{smallmatrix}A&C\\\mathit{O}&B-DA^{-1}C \end{smallmatrix}\bigr|$=$|A||B-DA^{-1}C|$\\
-\indent
-还有$\bigl | \begin{smallmatrix}C&A\\B&\mathit{O}\end{smallmatrix}\bigr |$=$\bigl | \begin{smallmatrix}\mathit{O}&A\\B&D \end{smallmatrix}\bigr |$=$(-1)^{n}|A||B|$\\
-\indent
-还有比较实用的$|A|$=$\bigl | \begin{smallmatrix}A&\mathit{O}\\\mathit{O}&I_{m}\end{smallmatrix}\bigr |$
-\subsection{矩阵}
-矩阵即一个数表，$A\in F^{m\times n},dim(F^{m\times n})=mn$\\
-\indent
-矩阵可进行加法运算，数乘运算，矩阵间乘法，转置，逆，等运算。
-\subsubsection{转置}
-对于任意矩阵$A$，其转置表示为$A^{T}$。\\
-\indent
-$A$与$A^{T}$的行列式、特征值相同。\\
-\indent
-$AA^{T}$是对称方阵，可以依据此构造对称方阵。\\
-\indent
-任意方阵都可以唯一地写成一个对称方阵与一个反对称方阵之和。
-\subsubsection{矩阵乘法}
-对于$A\in F^{m\times n},B\in F^{n\times p},AB=C,C\in F^{m\times p}$，C中每一个元素$c_ij$，由A中的i行与B中的j列构成，即$A_iB_j$。
-\subsubsection{逆}
-对于一个矩阵$A\in F^{n\times n}$，若存在矩阵$B\in F^{n\times n},$使得$AB=BA=I$(I为单位方阵)，则称A为可逆矩阵，B为A的逆矩阵且记为$A^{-1}$。\\
-\indent
-方阵可逆，当且仅当其行列式不为零。\\
-\indent
-当方阵A可逆，则其存在相应的伴随矩阵$A^{*}$，满足$A^{-1}=|A|^{-1}A^{*}$
-\subsubsection{迹}
-迹也是一个映射，将一个方阵映射到一个数。其定义为方阵主对角线上各个元素的总和。
-\subsubsection{特征值}
-时常要记得特征值的放缩意义，很重要。特征向量不能为零。\\
-\indent
-同时，若是要形象描述，3B1B，请。\\
-\indent
-$|\lambda I-A|$称为方阵的特征多项式，它的根称为特征，即特征值。
-\subsubsection{特征向量}
-对于方阵A的每一个特征值$\lambda_i$，方程组$(A-\lambda I)X=\mathit{O}$的解空间$V_{\lambda_{i}}$称为$A$的属于特征值 $\lambda_{i}$ 的特征子空间，该空间中的全体非零向量即为属于特征值$\lambda_{i}$的全体特征向量。不同特征值的特征子空间相互正交。
-\subsection{初等变换}
-左乘初等方阵即对矩阵进行初等行变换，右乘初等方阵即对矩阵进行初等列变化。具体看教材。\\
-\indent
-若方阵$A\in F^{n\times n}$可以经过有限次初等变换变成方阵$B\in F^{n\times n}$，则称方阵A，B相抵，也称等价。若两个方阵相抵，则$Rank(A)=Rank(B)$
-\subsection{线性映射}
-若一个映射满足$f(\alpha x+\beta y)=\alpha f(x)+\beta f(y)$，则称该映射为线性映射。线性映射$\sigma:X\rightarrow AX$可以通过用矩阵A左乘自变量X实现。若$\sigma$是$F^{n\times 1}$到自身的映射，则称为线性变换(线性自同态映射)。\\
-\indent
-对于线性映射$\sigma U\rightarrow V$，对于两个基，有$X\rightarrow AX,Y\rightarrow BY$，则A与B相抵。\\
-\indent
-若该映射为线性变换，则A与B相似。即同个线性变换在不同基下的矩阵相似。
-\subsection{相似}
-设$A,B$是可逆方阵，如果存在n阶可逆方阵$P$，使得$B=P^{-1}AP$，则称A与B相似。
-\subsubsection{性质}
-\begin{itemize}
-	\item [-]反身性与传递性等基本性质，不再赘述。
-	\item [-]若A与B相似，则A与B的特征多项式、特征值、每个特征值的重数、最小多项式、行列式以及迹都相同，但特征向量不一定相同。该性质均为充分条件，不是充要条件。该条在待定系数法求待定系数时十分常用。
-	\item [-]$(PAP^{-1})(PBP^{-1})=P(AB)P^{-1}$
-	\item [-]$(PAP^{-1})^{n}=PA^{n}P^{-1}$（暗示要将矩阵相似到对角阵再进行幂运算）
-	\item [-]对于任意多项式$f(x)$，有$f(PAP^{-1})=Pf(A)P^{-1}$（实质是上一条的一般情况）
-	\item [-]属于同一个方阵的不同特征值对应的特征向量线性无关。
-\end{itemize}
-另外，单位阵与可逆阵、对角阵、数量阵都未必相似。\\
-\indent
-若$A,B$均为方阵，A满秩，则$AB$与$BA$相似。
-\subsubsection{相似对角化条件（具体可参照维基百科“可对角化矩阵词条”）}
-先阐述两个概念：代数重数即$\lambda$作为方阵$A$的特征多项式的根的次数，几何重数即特征值相对应的特征空间（即$\lambda I -A$的核）的维数。
-\begin{itemize}
-	\item [-]方阵的每个特征值的重数等于其相应的特征子空间的维数，即每个特征值都有一个与其他特征向量线性无关的特征向量与其对应。
-	\item [-]方阵有n个线性无关的特征向量。实质同上一条。
-	\item [-]最小多项式没有重根。实质同第一条。
-	\item [-]所有的特征子空间可以表征为一维不变子空间的直和。对角化过程实质就是换一套坐标系去观察同一个矩阵，也就是找某个特征方向，即一维不变子空间的过程，形象化过程可参见3B1B相应的视频。
-	\item [-]每个特征值的代数重数等于其对应的几何重数。
-	\item [-]方阵是实对称方阵。该条件仅为充分条件。
-    \item [-]有$n$个特征值。该条件仅为充分条件。
-\end{itemize}
-	      \subsubsection{三角化（实用）}
-          每个复方阵都可以相似于上（下）三角矩阵。证明不再赘述，请参照教材。
-          \subsubsection{化零多项式}
-          设$\phi_{A}(\lambda)$是方阵A的特征多项式，则$\phi_{A}(A)=\mathit{O}$，因此，$\phi_{A}(\lambda)$是A的一个化零多项式。\\
-          \indent
-          对于每个方阵A，存在唯一的最低次数的首项系数为1的多项式$d(\lambda)$使$d(A)=\mathit{O}$，称为A的最小多项式，其化零多项式都是最小多项式的倍式。
-\subsection{内积}
-内积与欧氏空间的定义参见教材，不再赘述。
-\subsubsection{性质}
-\begin{itemize}
-\item[-]双线性：$(a+c,b)=(a,b)+(c,b),(a,b+d)=(a,b)+(a,d),(\lambda a,b)=\lambda(a,b)=(a,\lambda b)$
-\item[-]对称性：$(a,b)=(b,a)$
-\item[-]正定性：当$a\neq \mathit{O}$时，有$(a,a)>0$
-\end{itemize}
-\subsubsection{柯西不等式}
-对于两个向量$a,b\in R^{n}$，都有$|a|^{2}|b|^{2}\geq(a,b)^{2}$，等号当且仅当a与b成比例时成立。\\
-\indent
-可使用内积定义进行证明，或是使用二次方程的判别式进行证明。\\
-\indent
-相应地，存在有三角不等式：$|a+b|\leq|a|+|b|$，由柯西不等式可轻松得到。
-\subsubsection{施密特正交化方法}
-欧氏空间的任何一组基都可以改造成正交基，并可以进行归一化得到标准正交基。
-过程如下（如果是用于编写线性代数计算器就用豪斯霍尔德变换吧）：
-首先要拥有一组线性无关的向量$\left\{a_1,...,a_n\right\}$。
-\begin{eqnarray*}
-    \beta_{1}&=&a_1, \eta_{1}  = \frac{\beta_{1}}{|\beta_{1}|} \\
-    \beta_{2}&=&a_2-(a_2,\eta_1)\eta_1, \eta_2=\frac{\beta_{2}}{|\beta_{2}|}\\
-    \beta_{3}&=&a_3-(a_3,\eta_1)\eta_1-(a_3,\eta_2)\eta_2, \eta_3 = \frac{\beta_{3}}{|\beta_{3}|}\\
-    ...\\
-    \displaystyle \beta_{n}&=&a_n-\sum^{n-1}_{i=1}(a_n,\eta_i)\eta_i \eta_n= \frac{\beta_{n}}{\beta_{n}}
-\end{eqnarray*}
-很有规律哒。
-\subsubsection{正交方阵}
-满足$A^{T}=A^{-1}$的方阵$A$称为正交方阵。n阶正交方阵的列向量组与行向量组都是$R^{n}$的标准正交基。
-\subsection{二次型、实对称方阵、相合、正交相似}
-这里的主要内容课上已经讲的很详细了，不打算再赘述。请参照教材，并使用例题与相应习题辅助理解。\\
-\indent
-另外，正定阵必然满秩，与其相似的方阵必然可逆。
-\subsubsection{西尔维斯特惯性定律}
-设n阶实对称方阵$S$通过两个不同的可逆方阵$P,P_{1}$相合到标准形
-\[\Lambda=P^{T}SP=dial(I_{(p)},-I_{(q)},\mathit{O}),\Lambda_{1}=P_{1}^{T}SP_{1}=dial(I_{(p_1)},-I_{(q_1)},\mathit{O}) \]
-则$\Lambda=\Lambda_{1}$，即$p=p_1,q=q_1$\\
-\indent
-同时，如果$p=n$，则$\Lambda$与$S$正定，如果$p=0$，则$\Lambda$与$S$半负定。
-\subsubsection{顺序主子式}
-n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>0$
-\subsubsection{相合对角化与配方}
-两者的原理相似。\\
-\indent
-例题可见2013年高代习题指导二次型部分计算题第二题。
-\subsubsection{对称矩阵乘积的正定性}
-\begin{itemize}
-    \item [-]若$A$是正定矩阵，$A,B$都是对称矩阵，且$AB=BA$，则AB是正定矩阵的充要条件是B是正定矩阵。
-    \item [-]若$A,B$都是正定对称矩阵，则$AB$是对称矩阵的充要条件是$AB=BA$
-    \item [-]若$A$是一个$n$阶实对称矩阵且$Rank(A)=n$，则存在实对称矩阵，使得$AB+BA$是正定矩阵。
-\end{itemize}
-\subsection{若尔当标准形}
-看教材给出的算法吧，极好。\\
-\indent
-个人理解如下：\\
-\indent
-对于某一个特征值$\lambda$，对应的$A-\lambda I$的核的维度即其相应的若当块的个数。然后继续计算$(A-\lambda I)^{n}$的核的维度，直到其不再增加。然后相应地画出维数图，根据维数图每行的元素的个数，得到其对应的块的大小，即可得到若尔当标准型。\\
-\indent
-对于求相应的变换矩阵。$(A-\lambda I)^{n}\mathit{X}=\mathit{0}$的解是第$n$列的元素对应的解，由此可求出每一行最后一个元素对应的向量，然后，对于每一行，前一个$\mathit{X_{i}}$等于$(A-\lambda I)\mathit{X_{i+d}}$。当然，每一个都得保证是非零向量。
+	\maketitle
+%	\pagestyle{plain}
+%	\hrule
+	\tableofcontents
+%	\hrule
+	\newpage
+	\section{几何部分}
+	\subsection{曲面及其方程}
+	
+	\subsubsection{旋转曲面}
+	\subsubsection{柱面}
+	
+	\subsection{二次曲面}
+	\begin{itemize}
+		\item [-]椭圆锥面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=z^{2}$
+		\item [-]椭球面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}+\frac{z^{2}}{c^{2}}=1$
+		\item [-]单页双页面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=1$
+		\item [-]双叶双曲面：$\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}-\frac{z^{2}}{c^{2}}=1$
+		\item [-]椭圆双曲面：$\frac{x^{2}}{a^{2}}+\frac{y^{2}}{b^{2}}=z$
+		\item [-]双曲抛物面：$\frac{x^{2}}{a^{2}}-\frac{y^{2}}{b^{2}}=z$
+	\end{itemize}
+	\section{线性代数部分}
+	\subsection{矩阵消元}不再赘述。
+	\subsection{$Ax=b$}
+	\subsubsection{解的存在性}
+	当系数矩阵的秩与增广矩阵的秩相等时，有解。即
+	\[\displaystyle R(A,b)=R(A) \]
+	在判断方程组是否有解时，常常构造“零等于非零”来证明无解。
+	\indent
+	而对于$A\in F^{n\times n},Ax=b$有唯一解，等价于$|A|\neq 0$\\
+	\indent
+	若$Ax=b$的解不唯一，则其解集可写成通解+特解的形式。通解由解$Ax=\mathit{0}$得到，特解是解$Ax=b$得到的其中一个解。\\
+	\indent
+	考虑$Ax=\mathit{O},V=\left\{{x|Ax=\mathit{O}}\right\}$\\
+	\indent
+	有$dim(V)+Rank(A)=n$(秩-零化度定理)\\
+	\indent
+	同时，有$A=(A_1...A_n)^T,V(A_1...A_n)\perp V$\\
+	\indent
+	对于$Ax=b$，解可写成一个特解加上解$Ax=\mathit{O}$得到的通解。
+	\subsection{向量空间}
+	\subsection{八个运算律(以下均为缩略表示)}
+	\begin{itemize}
+		\item [·]加法交换律$a+b=b+a$
+		\item [·]加法结合律$(a+b)+c=a+(b+c)$
+		\item [·]存在零向量$\mathit{O}=(0,...,0),a+\mathit{O}=\mathit{O}+a$
+		\item [·]存在负向量对于$a=(a_1,...,a_n)$，存在负向量$-a=(-a_1,...,-a_n)$，满足$a+(-a)=\mathit{O}$
+		\item [·]数乘对于数的加法的分配律$(\lambda+\mu)a=\lambda a+\mu a$
+		\item [·]数乘对于向量加法的分配律$\lambda(a+b)=\lambda a+\lambda b$
+		\item [·]数乘结合律$\lambda(\mu a)=(\lambda \mu)a$
+		\item [·]1乘向量$1a=a$
+	\end{itemize}
+	\subsection{线性相关与线性无关}
+	对于n个向量$\alpha_1,...,\alpha_2$，考虑
+	\[\displaystyle \lambda_1\alpha_1+...+\lambda_n\alpha_n=\mathit{O}\]
+	\indent
+	若上式当且仅当$\lambda_1,...,\lambda_n$全为0时才满足，则称这n个向量线性无关，否则线性相关。
+	\subsection{线性组合}
+	具体含义不再赘述。\\
+	\indent
+	若B是A的线性组合，则$Rank(A)\geq Rank(B)$
+	\subsection{秩}
+	对于一个向量组，它的秩就是极大线性无关向量组中的向量的个数。不再赘述。
+	\subsubsection{秩公式}
+	$Rank(A^{T}A)=Rank(AA^{T})=Rank(A),A$为实矩阵。
+	\subsubsection{秩与伴随矩阵}
+	\begin{equation*}
+	\begin{cases}
+	Rank(A)=n &\Leftrightarrow Rank(A^{*})=n\\
+	Rank(A)=n-1 &\Leftrightarrow Rank(A^{*})=1\\
+	Rank(A)<n-1 &\Leftrightarrow Rank(A^{*})=0
+	\end{cases}
+	\end{equation*}
+	\subsection{基}
+	基的概念由秩派生而来，不再赘述。
+	\subsubsection{基变换}
+	设$a_1,a_2,...,a_n$是$V \in F^{n}$上的一组基，$\sigma$是$V$中的一个线性变换，基向量的像可以被基线性表示出来。
+	\[
+		\begin{split}
+		\sigma(a_1,a_2,...,a_n) = & (\sigma(a_1),\sigma(a_2),...,\sigma(a_n))    \\
+		= &(a_1,a_2,...,a_n)A \\
+		\end{split}
+	\]
+	其中，矩阵$A$称为$\sigma$在基$a_1,a_2,...,a_n$下的矩阵。\\
+	\indent
+	对于同一个线性变换$\sigma$，其在基$\alpha$下的矩阵为$\mathit{A}$，在基$\beta$下的矩阵为$\mathit{B}$，从$\mathit{A}$到$\mathit{B}$有过渡矩阵$\mathit{P}$，则$\mathit{B}=\mathit{P^{-1}AP}$。
+	\subsubsection{坐标变换}
+	坐标：有序数组$(x_1,...,x_n)$，通常记作列向量。即$\alpha=(a_1,...,a_n)(x_1,...,x_n)^T$\\
+	\indent
+	使用NB代表新基，OP代表旧坐标，NP代表新坐标，则有$[NB][NP]=[OP]$，而通过化简$[NB,OP]$可得到NP。
+	\subsubsection{过渡矩阵}
+	过渡矩阵是基与基之间的可逆线性变换，具体请参照教材，不再赘述。\\
+	\indent
+	由基A变到基B：$B=AP$，由坐标X(A)变到坐标Y(B)：$X=PY$，使用逆运算即可求解处过渡矩阵。\\
+	\indent
+	标准正交基之间的过度矩阵是正交矩阵。
+	\subsubsection{子空间}
+	子空间W是数域F上的向量空间V的非空子集，且满足加法与数乘封闭。\\
+	\indent
+	子空间W包含的线性无关向量的最大个数称为W的维数，记作$ \dim W $。其余可参照教材，不再赘述。
+	\subsubsection{子空间的交与和}
+	对于$W_1,W_2\subseteq V$,$W_1\cap W_2=W_3,W_1+W_2=W_4,W_3$和$W_4$仍是V的子空间，但是$W_1\cup W_2=W_5,W_5$不一定是子空间。\\
+	\indent
+	其中，$\dim(W_1+W_2)+\dim(W_1\cap W_2)=\dim(W_1)+\dim(W_2)$，当$\dim(W_1\cap W_2)=0$时，$W_1+W_2$记为$W_1\oplus W_2$，称为直和。\\
+	\subsection{行列式}
+	行列式也是一种映射，它将一个方阵映射到一个数。\\
+	\indent
+	\subsubsection{性质}
+	太多了，不再赘述。
+	\subsubsection{展开定理}
+	用于行列式降阶，极其实用。同时也是行列式的归纳定义。\\
+	\indent
+	代数余子式乘以该项（可以是一个数，也可以是方阵），求和，得到行列式。具体可看教材或拉普拉斯展开维基页面。
+	\subsubsection{分块运算}
+	若$A,B$均为方阵，则$\begin{vmatrix} A & C \\ \mathit{O} & B \end{vmatrix}=|A||B|$\\
+	\indent
+	若A可逆，则还有$\begin{vmatrix}A&C \\ D&B\end{vmatrix}$ =$\begin{vmatrix}A&C\\\mathit{O}&B-DA^{-1}C \end{vmatrix}$=$|A||B-DA^{-1}C|$\\
+	\indent
+	还有$\begin{vmatrix}C&A\\B&\mathit{O}\end{vmatrix}$=$\begin{vmatrix}\mathit{O}&A\\B&D \end{vmatrix}$=$(-1)^{n}|A||B|$\\
+	\indent
+	还有比较实用的$|A|$=$\begin{vmatrix}A&\mathit{O}\\\mathit{O}&I_{m}\end{vmatrix}$
+	\subsection{矩阵}
+	矩阵即一个数表，$A\in F^{m\times n},\dim(F^{m\times n})=mn$\\
+	\indent
+	矩阵可进行加法运算，数乘运算，矩阵间乘法，转置，逆，等运算。
+	\subsubsection{转置}
+	对于任意矩阵$A$，其转置表示为$A^{T}$。\\
+	\indent
+	$A$与$A^{T}$的行列式、特征值相同。\\
+	\indent
+	$AA^{T}$是对称方阵，可以依据此构造对称方阵。\\
+	\indent
+	任意方阵都可以唯一地写成一个对称方阵与一个反对称方阵之和。
+	\subsubsection{矩阵乘法}
+	对于$A\in F^{m\times n},B\in F^{n\times p},AB=C,C\in F^{m\times p}$，C中每一个元素$c_ij$，由A中的i行与B中的j列构成，即$A_iB_j$。
+	\subsubsection{逆}
+	对于一个矩阵$A\in F^{n\times n}$，若存在矩阵$B\in F^{n\times n},$使得$AB=BA=I$(I为单位方阵)，则称A为可逆矩阵，B为A的逆矩阵且记为$A^{-1}$。\\
+	\indent
+	方阵可逆，当且仅当其行列式不为零。\\
+	\indent
+	当方阵A可逆，则其存在相应的伴随矩阵$A^{*}$，满足$A^{-1}=|A|^{-1}A^{*}$
+	\subsubsection{迹}
+	迹也是一个映射，将一个方阵映射到一个数。其定义为方阵主对角线上各个元素的总和。
+	\subsubsection{特征值}
+	时常要记得特征值的放缩意义，很重要。特征向量不能为零。\\
+	\indent
+	同时，若是要形象描述，3B1B，请。\\
+	\indent
+	$|\lambda I-A|$称为方阵的特征多项式，它的根称为特征根，即特征值。
+	\subsubsection{特征向量}
+	对于方阵A的每一个特征值$\lambda_i$，方程组$(A-\lambda I)X=\mathit{O}$的解空间$V_{\lambda_{i}}$称为$A$的属于特征值 $\lambda_{i}$ 的特征子空间，该空间中的全体非零向量即为属于特征值$\lambda_{i}$的全体特征向量。不同特征值的特征子空间相互正交。
+	\subsection{初等变换}
+	左乘初等方阵即对矩阵进行初等行变换，右乘初等方阵即对矩阵进行初等列变化。具体看教材。\\
+	\indent
+	若方阵$A\in F^{n\times n}$可以经过有限次初等变换变成方阵$B\in F^{n\times n}$，则称方阵A，B相抵，也称等价。若两个方阵相抵，则$Rank(A)=Rank(B)$
+	\subsection{线性映射}
+	若一个映射满足$f(\alpha x+\beta y)=\alpha f(x)+\beta f(y)$，则称该映射为线性映射。线性映射$\sigma:X\rightarrow AX$可以通过用矩阵A左乘自变量X实现。若$\sigma$是$F^{n\times 1}$到自身的映射，则称为线性变换(线性自同态映射)。\\
+	\indent
+	对于线性映射$\sigma U\rightarrow V$，对于两个基，有$X\rightarrow AX,Y\rightarrow BY$，则A与B相抵。\\
+	\indent
+	若该映射为线性变换，则A与B相似。即同个线性变换在不同基下的矩阵相似。
+	\subsection{相似}
+	设$A,B$是可逆方阵，如果存在n阶可逆方阵$P$，使得$B=P^{-1}AP$，则称A与B相似。
+	\subsubsection{性质}
+	\begin{itemize}
+		\item [-]反身性与传递性等基本性质，不再赘述。
+		\item [-]若A与B相似，则A与B的特征多项式、特征值、每个特征值的重数、最小多项式、行列式以及迹都相同，但特征向量不一定相同。该性质均为充分条件，不是充要条件。该条在待定系数法求待定系数时十分常用。
+		\item [-]$(PAP^{-1})(PBP^{-1})=P(AB)P^{-1}$
+		\item [-]$(PAP^{-1})^{n}=PA^{n}P^{-1}$（暗示要将矩阵相似到对角阵再进行幂运算）
+		\item [-]对于任意多项式$f(x)$，有$f(PAP^{-1})=Pf(A)P^{-1}$（实质是上一条的一般情况）
+		\item [-]属于同一个方阵的不同特征值对应的特征向量线性无关。
+	\end{itemize}
+	另外，单位阵与可逆阵、对角阵、数量阵都未必相似。\\
+	\indent
+	若$A,B$均为方阵，A满秩，则$AB$与$BA$相似。
+	\subsubsection{相似对角化条件（具体可参照维基百科“可对角化矩阵词条”）}
+	先阐述两个概念：代数重数即$\lambda$作为方阵$A$的特征多项式的根的次数，几何重数即特征值相对应的特征空间（即$\lambda I -A$的核）的维数。
+	\begin{itemize}
+		\item [-]方阵的每个特征值的重数等于其相应的特征子空间的维数，即每个特征值都有一个与其他特征向量线性无关的特征向量与其对应。
+		\item [-]方阵有n个线性无关的特征向量。实质同上一条。
+		\item [-]最小多项式没有重根。实质同第一条。
+		\item [-]所有的特征子空间可以表征为一维不变子空间的直和。对角化过程实质就是换一套坐标系去观察同一个矩阵，也就是找某个特征方向，即一维不变子空间的过程，形象化过程可参见3B1B相应的视频。
+		\item [-]每个特征值的代数重数等于其对应的几何重数。
+		\item [-]方阵是实对称方阵。该条件仅为充分条件。
+		\item [-]有$n$个特征值。该条件仅为充分条件。
+	\end{itemize}
+	\subsubsection{三角化（实用）}
+	每个复方阵都可以相似于上（下）三角矩阵。证明不再赘述，请参照教材。
+	\subsubsection{化零多项式}
+	设$\phi_{A}(\lambda)$是方阵A的特征多项式，则$\phi_{A}(A)=\mathit{O}$，因此，$\phi_{A}(\lambda)$是A的一个化零多项式。\\
+	\indent
+	对于每个方阵A，存在唯一的最低次数的首项系数为1的多项式$d(\lambda)$使$d(A)=\mathit{O}$，称为A的最小多项式，其化零多项式都是最小多项式的倍式。
+	\subsection{内积}
+	内积与欧氏空间的定义参见教材，不再赘述。
+	\subsubsection{性质}
+	\begin{itemize}
+		\item[-]双线性：$(a+c,b)=(a,b)+(c,b),(a,b+d)=(a,b)+(a,d),(\lambda a,b)=\lambda(a,b)=(a,\lambda b)$
+		\item[-]对称性：$(a,b)=(b,a)$
+		\item[-]正定性：当$a\neq \mathit{O}$时，有$(a,a)>0$
+	\end{itemize}
+	\subsubsection{柯西不等式}
+	对于两个向量$a,b\in R^{n}$，都有$|a|^{2}|b|^{2}\geq(a,b)^{2}$，等号当且仅当a与b成比例时成立。\\
+	\indent
+	可使用内积定义进行证明，或是使用二次方程的判别式进行证明。\\
+	\indent
+	相应地，存在有三角不等式：$|a+b|\leq|a|+|b|$，由柯西不等式可轻松得到。
+	\subsubsection{施密特正交化方法}
+	欧氏空间的任何一组基都可以改造成正交基，并可以进行归一化得到标准正交基。
+	过程如下（如果是用于编写线性代数计算器就用豪斯霍尔德变换吧）：
+	首先要拥有一组线性无关的向量$\left\{a_1,...,a_n\right\}$。
+	\begin{eqnarray*}
+		\beta_{1}&=&a_1, \eta_{1}  = \frac{\beta_{1}}{|\beta_{1}|} \\
+		\beta_{2}&=&a_2-(a_2,\eta_1)\eta_1, \eta_2=\frac{\beta_{2}}{|\beta_{2}|}\\
+		\beta_{3}&=&a_3-(a_3,\eta_1)\eta_1-(a_3,\eta_2)\eta_2, \eta_3 = \frac{\beta_{3}}{|\beta_{3}|}\\
+		...\\
+		\displaystyle \beta_{n}&=&a_n-\sum^{n-1}_{i=1}(a_n,\eta_i)\eta_i \eta_n= \frac{\beta_{n}}{\beta_{n}}
+	\end{eqnarray*}
+	很有规律哒。
+	\subsubsection{正交方阵}
+	满足$A^{T}=A^{-1}$的方阵$A$称为正交方阵。n阶正交方阵的列向量组与行向量组都是$R^{n}$的标准正交基。
+	\subsection{二次型、实对称方阵、相合、正交相似}
+	这里的主要内容课上已经讲的很详细了，不打算再赘述。请参照教材，并使用例题与相应习题辅助理解。\\
+	\indent
+	另外，正定阵必然满秩，与其相似的方阵必然可逆。
+	\subsubsection{西尔维斯特惯性定律}
+	设n阶实对称方阵$S$通过两个不同的可逆方阵$P,P_{1}$相合到标准形
+	\[\Lambda=P^{T}SP=dial(I_{(p)},-I_{(q)},\mathit{O}),\Lambda_{1}=P_{1}^{T}SP_{1}=dial(I_{(p_1)},-I_{(q_1)},\mathit{O}) \]
+	则$\Lambda=\Lambda_{1}$，即$p=p_1,q=q_1$\\
+	\indent
+	同时，如果$p=n$，则$\Lambda$与$S$正定，如果$p=0$，则$\Lambda$与$S$半负定。
+	\subsubsection{顺序主子式}
+	n阶实对称方阵$S$正定$\Leftrightarrow$ $S$所有的顺序主子式$|S_k|>0$
+	\subsubsection{相合对角化与配方}
+	两者的原理相似。\\
+	\indent
+	例题可见2013年高代习题指导二次型部分计算题第二题。
+	\subsubsection{对称矩阵乘积的正定性}
+	\begin{itemize}
+		\item [-]若$A$是正定矩阵，$A,B$都是对称矩阵，且$AB=BA$，则AB是正定矩阵的充要条件是B是正定矩阵。
+		\item [-]若$A,B$都是正定对称矩阵，则$AB$是对称矩阵的充要条件是$AB=BA$
+		\item [-]若$A$是一个$n$阶实对称矩阵且$Rank(A)=n$，则存在实对称矩阵，使得$AB+BA$是正定矩阵。
+	\end{itemize}
+	\subsection{若尔当标准形}
+	看教材给出的算法吧，极好。\\
+	\indent
+	个人理解如下：\\
+	\indent
+	对于某一个特征值$\lambda$，对应的$A-\lambda I$的核的维度即其相应的若当块的个数。然后继续计算$(A-\lambda I)^{n}$的核的维度，直到其不再增加。然后相应地画出维数图，根据维数图每行的元素的个数，得到其对应的块的大小，即可得到若尔当标准型。\\
+	\indent
+	对于求相应的变换矩阵。$(A-\lambda I)^{n}\mathit{X}=\mathit{0}$的解是第$n$列的元素对应的解，由此可求出每一行最后一个元素对应的向量，然后，对于每一行，前一个$\mathit{X_{i}}$等于$(A-\lambda I)\mathit{X_{i+d}}$。当然，每一个都得保证是非零向量。
 \end{document}
